@@ -31,16 +31,34 @@ export default function TodoList() {
                     value={inputValue}
                     onChange={handleInputChange}
                 />
-                <button type="button" onClick={handleAddTodo}>Add</button>
+
+                <button 
+                    type="button"
+                    onClick={handleAddTodo}
+                >
+                    Add
+                </button>
             </div>
 
             <div>
-                {todos.map((todo, index) => (
-                    <div key={index} className="todo-item">
-                        <span>{todo}</span>
-                        <button className="delete" type="button" onClick={() => handleDeleteTodo(index)}>Delete</button>
-                    </div>
-                ))}
+                {
+                    todos.map((todo, index) => (
+                        <div 
+                            key={index}
+                            className="todo-item"
+                        >
+                            <span>{todo}</span>
+
+                            <button
+                                className="delete"
+                                type="button"
+                                onClick={() => handleDeleteTodo(index)}
+                            >
+                                Delete
+                            </button>
+                        </div>
+                    ))
+                }
             </div>
         </div>
     );
