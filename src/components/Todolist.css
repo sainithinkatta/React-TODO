@@ -53,9 +53,6 @@ button:hover {
 }
 
 .todo-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     padding: 10px;
     border-bottom: 1px solid #eee;
 }
@@ -76,4 +73,18 @@ button.delete {
 
 button.delete:hover {
     background-color: #c82333;
+}
+
+button.edit {
+    background-color: #007bff;
+    margin-left: 10px;
+}
+
+button.edit:hover {
+    background-color: #0056b3;
+}
+
+.save-todo {
+    background-color: green; 
+    color: white;
 }
