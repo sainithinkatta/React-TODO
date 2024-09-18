@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import './TodoList.css';
+import './Todolist.css';
 
 export default function TodoList() {
     const [inputValue, setInputValue] = useState(''); // For adding new todos.
