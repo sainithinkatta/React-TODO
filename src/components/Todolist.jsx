@@ -15,6 +15,7 @@ export default function TodoList() {
             const updatedTodos = todos.map((t, index) => 
                 index === isEditIndex ? todo : t
             );
+
             setTodos(updatedTodos);
             setEditIndex(null);
         }
@@ -34,6 +35,7 @@ export default function TodoList() {
             const updatedTodos = todos.map((todo, index) => 
                 index === isEditIndex ? editInputValue : todo
             );
+
             setTodos(updatedTodos);
             setEditInputValue('');
             setEditIndex(null);
@@ -50,22 +52,27 @@ export default function TodoList() {
         <div className="todo-list-container">
             <h1>TODO&rsquo;s</h1>
 
-            <TodoInput addTodo={handleAddTodo} isEditingTodo={isEditing} />
+            <TodoInput
+                addTodo={ handleAddTodo }
+                isEditingTodo={isEditing} 
+            />
 
             <div>
-                {todos.map((todo, index) => (
-                    <TodoItem
-                        key={index}
-                        todo={todo}
-                        index={index}
-                        isEditTodo={isEditIndex === index}
-                        editInputValue={editInputValue}
-                        onEditTodo={() => handleEditTodo(index)}
-                        onDeleteTodo={() => handleDeleteTodo(index)}
-                        onSaveTodo={handleSaveTodo}
-                        onEditTodoInputChange={handleEditInputChange}
-                    />
-                ))}
+                {
+                    todos.map((todo, index) => (
+                        <TodoItem
+                            key={index}
+                            todo={todo}
+                            index={index}
+                            isEditTodo={isEditIndex === index}
+                            editInputValue={editInputValue}
+                            onEditTodo={() => handleEditTodo(index)}
+                            onDeleteTodo={() => handleDeleteTodo(index)}
+                            onSaveTodo={handleSaveTodo}
+                            onEditTodoInputChange={handleEditInputChange}
+                        />
+                    ))
+                }
             </div>
         </div>
     );

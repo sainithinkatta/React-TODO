@@ -25,10 +25,11 @@ export default function TodoInput({
                 value={inputValue}
                 onChange={handleInputChange}
             />
+
             <button
                 type="button"
-                onClick={handleAddTodo}
                 disabled={isEditingTodo} // Disable when editing.
+                onClick={handleAddTodo}
             >
                 Add
             </button>
